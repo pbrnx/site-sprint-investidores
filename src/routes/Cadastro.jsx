@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import '../scss/Form.scss';
 import toast from 'react-hot-toast';
 
+// URL fornecida manualmente, pois process.env não está funcionando corretamente
+const VITE_REACT_APP_NGROK_URL = 'https://legible-chipmunk-only.ngrok-free.app';
+
 function Cadastro() {
   document.title = "hAppVida Fitness | Cadastre-se";
   const [nome, setNome] = useState('');
@@ -21,7 +24,6 @@ function Cadastro() {
    const handlenomeEmpresaChange = (event) => {
     setnomeEmpresa(event.target.value);
   };
-
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -91,7 +93,7 @@ function Cadastro() {
     };
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_NGROK_URL}/users`, {
+      const response = await fetch(`${VITE_REACT_APP_NGROK_URL}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,11 +135,9 @@ function Cadastro() {
         <input type="text" id="celular" placeholder='Digite seu celular ((XX) XXXXX-XXXX)' value={celular} onChange={handleCelularChange} />
         <br />
 
-        
         <label htmlFor="empresa">Nome da Empresa:</label>
         <input type="text" id="empresa" placeholder='Digite o nome da sua empresa' value={nomeEmpresa} onChange={handlenomeEmpresaChange} />
         <br />
-
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />
         <label htmlFor="checkbox">Aceito os termos e condições e concordo com o uso dos meus dados de acordo com a LGPD (Lei Geral de Proteção de Dados).</label>

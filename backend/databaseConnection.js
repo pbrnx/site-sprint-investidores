@@ -5,7 +5,7 @@ import oracledb from 'oracledb';
 import cors from 'cors'; // Importar o CORS para permitir requisições do frontend
 
 const app = express();
-const port = 5000;
+const port = 25565;
 
 app.use(express.json());
 app.use(cors()); // Habilitar CORS para permitir comunicação com o frontend
@@ -90,6 +90,6 @@ app.get('/users', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+app.listen(port, '0.0.0.0',() => {
+  console.log(`Servidor rodando em http://179.116.2.197:${port}`);
 });

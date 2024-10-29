@@ -21,3 +21,4 @@ users.json
 *.njsproj
 *.sln
 *.sw?
+*.backend

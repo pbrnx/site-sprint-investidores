@@ -1,0 +1,63 @@
+$button-bg: #0099ff;
+$button-bg-hover: #b4d2ff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.headerContainer {
+    width: 100%; 
+   
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #dde9ff;
+        padding: 0;
+        width: 100%; 
+        
+
+        .header-icon {
+            img {
+                width: 200px; 
+            }
+            
+        }
+
+        .header-user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span {
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+            #logoutContainer{
+                padding-right: 80px;
+                padding-left: 0;
+                 padding-bottom: 0;
+                
+        
+            #logoutButton {
+                background-color: $button-bg;
+                color: rgb(0, 0, 0);
+                border: none;
+                padding: 10px 10px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: 0.3s;
+                &:hover {
+                    background-color: $button-bg-hover;
+            }
+        }
+    }
+}
+
+}
+}

@@ -1,0 +1,120 @@
+$font-color: #333;
+$secondary-color: #eaeaea; 
+
+.main-content {
+    color: $font-color;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between; 
+  
+    .carousel-container {
+      flex: 1; 
+      max-width: 50%;
+  
+      img {
+        width: 100%; 
+        height: auto;
+       padding: 5%;
+      }
+    }
+  
+    .solution-container {
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      padding: 2.5%
+    }
+  
+    .solution-article {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left; // Alinha o texto à esquerda
+        padding-left: 10%;
+       
+   
+    }
+
+    .solution-title-container{
+       
+        padding: 20px;
+        margin: 0;
+        display: flex;
+        p{
+            padding-left: 12%;
+            width: 50%;
+        }
+   
+    .solution-title { // Estilos para o título
+        text-align: center;
+         // Espaço acima do título
+        font-size: 240%;
+
+        // Tamanho do texto, ajuste conforme necessário
+      }
+    }
+
+  
+    .additional-info {
+      background-color: $secondary-color;
+      padding: 2%; 
+      font-size: 120%;
+    }
+  }
+
+  .vantagens{
+    text-align: left;
+    padding-left:2%;
+    h1{
+      text-align: left;
+    }
+    
+   p{
+      font-size: 120%;
+    }
+  }
+
+.photos-section {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px; 
+  padding-bottom:5%;
+ 
+    .img-container {
+      min-width: 10%; 
+      overflow: hidden;
+      margin-left: 5%;
+      margin-right: 5%;
+      height: auto;
+      border-radius: 15px;
+      
+    }
+    
+    img.imgP1 {
+      width: 100%;
+      
+      filter: grayscale(90%);
+    }
+
+    .img-container:hover img.imgP1 {
+      transform: scale(1.2); 
+      transition:  0.5s ease;
+    
+      filter: grayscale(0);
+    }
+
+    .img-container:not(:hover) img.imgP1 {
+      transition:  1s ease;
+     
+    }
+}
+
+@media (max-width:768px){
+  .main-content{
+    flex-direction: column;
+    .carousel{
+        width: 200%;
+    }
+  }
+}

@@ -91,5 +91,5 @@ app.get('/users', async (req, res) => {
 });
 
 app.listen(port, '0.0.0.0',() => {
-  console.log(`Servidor rodando em http://179.116.2.197:${port}`);
+  console.log('Servidor rodando em http://179.116.2.197:25565');
 });

@@ -21,4 +21,5 @@ users.json
 *.njsproj
 *.sln
 *.sw?
+*.env
 

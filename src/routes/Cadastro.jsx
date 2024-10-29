@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../scss/Form.scss';
 import toast from 'react-hot-toast';
+import Footer from '../components/footer/Footer.jsx';
 
 // URL fornecida manualmente, pois process.env não está funcionando corretamente
 const VITE_REACT_APP_NGROK_URL = 'https://legible-chipmunk-only.ngrok-free.app';
@@ -145,6 +146,7 @@ function Cadastro() {
 
         <button type="submit" id="cadastroButton">Cadastrar</button>
       </form>
+      <Footer />
     </>
   );
 }

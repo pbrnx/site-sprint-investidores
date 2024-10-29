@@ -91,7 +91,7 @@ function Cadastro() {
     };
 
     try {
-      const response = await fetch('https://fe3f-2804-7f0-36-11e3-5c6a-1684-3925-140e.ngrok-free.app/users', {
+      const response = await fetch('NGROK_URL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -91,7 +91,7 @@ function Cadastro() {
     };
 
     try {
-      const response = await fetch(`${process.env.NGROK_URL}/users`, {
+      const response = await fetch(`${process.env.REACT_APP_NGROK_URL}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

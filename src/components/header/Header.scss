@@ -1,63 +1,62 @@
-$button-bg: #0099ff;
-$button-bg-hover: #b4d2ff;
+$button-bg: #0099ff;  // Cor azul vibrante para o botão de ação
+$button-bg-hover: #b4d2ff;  // Cor mais clara para o efeito de hover no botão
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
 .headerContainer {
-    width: 100%; 
-   
+    width: 100%;
 
     .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #dde9ff;
-        padding: 0;
-        width: 100%; 
-        
+        background-color: #c3d4f2; // Azul ligeiramente mais escuro para mais contraste
+        padding: 20px; // Maior padding para mais espaço ao redor do conteúdo
+        width: 100%;
 
         .header-icon {
             img {
-                width: 200px; 
+                width: 250px; // Reduzi o tamanho para balancear visualmente com o botão
             }
-            
         }
 
         .header-user-info {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
 
             span {
                 margin-right: 10px;
                 display: flex;
                 flex-direction: column;
+                text-align: center; // Centralizado para ficar mais simétrico
+                font-weight: 300; // Fonte mais fina para um visual delicado
             }
-            #logoutContainer{
-                padding-right: 80px;
+
+            #logoutContainer {
+                padding-right: 20px; // Ajustado para centralizar o botão
                 padding-left: 0;
-                 padding-bottom: 0;
-                
-        
-            #logoutButton {
-                background-color: $button-bg;
-                color: rgb(0, 0, 0);
-                border: none;
-                padding: 10px 10px;
-                cursor: pointer;
-                border-radius: 4px;
-                transition: 0.3s;
-                &:hover {
-                    background-color: $button-bg-hover;
+                padding-bottom: 0;
+
+                #logoutButton {
+                    background-color: $button-bg;
+                    color: #ffffff; // Alterado para branco para contraste melhor
+                    border: none;
+                    padding: 10px 20px; // Aumentei o padding para mais espaçamento no botão
+                    cursor: pointer;
+                    border-radius: 4px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: $button-bg-hover;
+                    }
+                }
             }
         }
     }
-}
-
-}
 }

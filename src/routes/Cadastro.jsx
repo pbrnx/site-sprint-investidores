@@ -1,8 +1,8 @@
-import React, { useState } from 'react'; 
-import { useNavigate } from "react-router-dom";
-import '../scss/Form.scss';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 import Footer from '../components/footer/Footer.jsx';
+import '../scss/Form.scss';
 
 // URL fornecida manualmente, pois process.env não está funcionando corretamente
 const VITE_REACT_APP_NGROK_URL = 'https://legible-chipmunk-only.ngrok-free.app';
@@ -11,7 +11,7 @@ function Cadastro() {
   document.title = "hAppVida Fitness | Cadastre-se";
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState('');
+
   const [celular, setCelular] = useState('');
   const [nomeEmpresa, setnomeEmpresa] = useState('');
   const [checkboxChecked, setCheckboxChecked] = useState(false);
@@ -22,7 +22,7 @@ function Cadastro() {
     setNome(event.target.value);
   };
 
-   const handlenomeEmpresaChange = (event) => {
+  const handlenomeEmpresaChange = (event) => {
     setnomeEmpresa(event.target.value);
   };
 
@@ -30,14 +30,6 @@ function Cadastro() {
     setEmail(event.target.value);
   };
 
-  const handleCpfChange = (event) => {
-    let value = event.target.value;
-    value = value.replace(/\D/g, ""); // Remove tudo que não for número
-    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca o primeiro ponto
-    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca o segundo ponto
-    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca o traço
-    setCpf(value);
-  };
 
   const handleCelularChange = (event) => {
     let value = event.target.value;
@@ -56,7 +48,7 @@ function Cadastro() {
 
     // Verificação dos campos
     const checkMail = email.trim();
-    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+
     const celularRegex = /^\(\d{2}\)\s\d{5}-\d{4}$/;
 
     if (nome.length === 0) {
@@ -69,10 +61,7 @@ function Cadastro() {
       return;
     }
 
-    if (!cpfRegex.test(cpf)) {
-      toast.error("CPF inválido! Use o formato XXX.XXX.XXX-XX.");
-      return;
-    }
+
 
     if (!celularRegex.test(celular)) {
       toast.error("Celular inválido! Use o formato (XX) XXXXX-XXXX.");
@@ -88,7 +77,6 @@ function Cadastro() {
     const newUser = {
       nome,
       email,
-      cpf,
       celular,
       nomeEmpresa,
     };
@@ -128,9 +116,6 @@ function Cadastro() {
         <input type="text" id="email" placeholder='Digite seu Email' value={email} onChange={handleEmailChange} />
         <br />
 
-        <label htmlFor="cpf">CPF:</label>
-        <input type="text" id="cpf" placeholder='Digite seu CPF (XXX.XXX.XXX-XX)' value={cpf} onChange={handleCpfChange} />
-        <br />
 
         <label htmlFor="celular">Celular:</label>
         <input type="text" id="celular" placeholder='Digite seu celular ((XX) XXXXX-XXXX)' value={celular} onChange={handleCelularChange} />

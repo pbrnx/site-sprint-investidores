@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from "../components/footer/Footer.jsx";
-import { useState } from 'react';
 import "../scss/Projeto.scss";
 
 
 export default function Home() {
-  document.title = "hAppVida Fitness | Home";
+  document.title = "LaparoscopySim | Home";
   const [hoveredImage, setHoveredImage] = useState(null);
 
 
@@ -16,9 +15,9 @@ export default function Home() {
           <aside className="carousel">
             <img src="/assets/imgtexto.png" alt="Solução inteligente" />
             <div className='solution-title-container'>
-              <h1 className="solution-title">hAppVida Fitness</h1>
+              <h1 className="solution-title">LaparoscopySim</h1>
 
-              <p>Sua solução para envelhecimento saudável, controle de peso e nutrição personalizada. Saúde e bem-estar ao seu alcance.</p>
+              <p>Domine as técnicas de laparoscopia, desenvolva precisão e confiança com um treinamento personalizado. Somos o futuro da saúde e da segurança dos seus pacientes — e ele começa aqui.</p>
             </div>
 
             {/* Título 
@@ -28,11 +27,10 @@ export default function Home() {
         </section>
         <section className="solution-container">
           <aside className="additional-info">
-            <p>Envelhecer com saúde não é apenas uma meta, é uma necessidade. Neste cenário, o hAppVida Fitness surge como uma ferramenta essencial, projetada para apoiar e enriquecer a jornada de envelhecimento saudável. Com o avançar da idade, nosso corpo e mente enfrentam desafios únicos, e a adaptação ao estilo de vida é crucial para manter a saúde e a vitalidade. O hAppVida Fitness oferece uma abordagem personalizada, com recursos que abrangem desde o monitoramento da atividade física até conselhos de bem-estar mental. Este aplicativo não é apenas um rastreador de saúde; é um companheiro dedicado, oferecendo orientação, motivação e suporte para que cada usuário possa desfrutar de uma vida plena e saudável.</p><br />
-            <p>Manter um peso saudável é vital para a saúde geral, especialmente à medida que envelhecemos. O hAppVida Fitness atende a essa necessidade com um conjunto robusto de ferramentas projetadas para ajudar na gestão do peso. Com recursos avançados, como rastreadores de atividade, análises detalhadas de progresso e planos de exercícios personalizados, este aplicativo oferece uma abordagem holística para controle de peso. Ele considera fatores como idade, histórico de saúde e objetivos pessoais, proporcionando um caminho claro e acessível para alcançar e manter um peso saudável. Além disso, o hAppVida Fitness incentiva hábitos saudáveis e sustentáveis, promovendo uma mudança de estilo de vida que vai além das métricas tradicionais de saúde.</p><br />
-            <p>Ajustar a dieta é outro aspecto crucial para manter a saúde com o passar dos anos. O hAppVida Fitness se destaca ao fornecer orientações nutricionais personalizadas, adaptadas às necessidades individuais de cada usuário. Entendemos que cada pessoa é única, e suas necessidades nutricionais variam. Por isso, o aplicativo oferece recomendações detalhadas de dieta, planos de refeições e dicas de alimentação saudável, tudo baseado em preferências pessoais, intolerâncias alimentares e objetivos de saúde. Além disso, o hAppVida Fitness inclui uma vasta biblioteca de receitas saudáveis e deliciosas, ajudando os usuários a fazer escolhas alimentares conscientes e saborosas que contribuem para a prevenção de doenças e um envelhecimento saudável.
+            <p>Aprender laparoscopia vai muito além de simplesmente adquirir uma habilidade; é uma necessidade essencial para os profissionais de saúde que desejam liderar em suas áreas de atuação. Nesse contexto, o Laparoscopy Sim emerge como uma ferramenta fundamental para os futuros cirurgiões, oferecendo uma abordagem inovadora e eficaz para o treinamento de técnicas laparoscópicas. Com os desafios únicos que envolvem procedimentos minimamente invasivos, a prática constante e adaptativa é crucial para desenvolver as habilidades motoras e cognitivas necessárias. O Laparoscopy Sim oferece um ambiente seguro e personalizado onde os médicos podem praticar, cometendo erros e aprendendo com eles sem riscos reais para os pacientes. O foco em orientação detalhada, feedback imediato e um desenvolvimento progressivo torna essa experiência de aprendizagem indispensável para uma preparação confiante e de alto nível.</p><br />
 
-            </p>
+            <p>Além do aperfeiçoamento técnico, o Laparoscopy Sim ajuda a fomentar a precisão e a coordenação necessárias para cada etapa de uma cirurgia laparoscópica. O treinamento através de simulações realistas permite aos alunos não apenas desenvolver competências operacionais, mas também criar uma abordagem holística à cirurgia, incorporando aspectos como ergonomia, eficiência de movimento e solução de problemas em tempo real. Ao combinar análises detalhadas de progresso e planos personalizados de aprendizado, o Laparoscopy Sim capacita futuros médicos a alcançarem uma alta proficiência em um ambiente de aprendizado acessível e motivador. Assim, ele não é apenas uma plataforma de treinamento, mas sim um verdadeiro aliado na formação de cirurgiões que estarão prontos para fazer a diferença na vida dos pacientes e na evolução da medicina minimamente invasiva. </p>
+
 
           </aside>
         </section>
@@ -63,16 +61,6 @@ export default function Home() {
             onMouseLeave={() => setHoveredImage(null)}
           />
 
-
-        </div>
-
-        <div className="img-container">
-          <img className='imgP1'
-            src={hoveredImage === 3 ? "/assets/vantagem6.png" : "/assets/vantagem5.png"}
-            alt="Vantagem"
-            onMouseEnter={() => setHoveredImage(3)}
-            onMouseLeave={() => setHoveredImage(null)}
-          />
 
         </div>
 

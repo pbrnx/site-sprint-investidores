@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './Header.scss';
 import Logo from "/assets/logo.png";
 
-
 export default function Header({ children }) {
   const navigate = useNavigate();
   const userName = sessionStorage.getItem('userName');
@@ -15,17 +14,16 @@ export default function Header({ children }) {
     toast("Essa é a página de cadastro! \n Insira suas informações abaixo.");
   }
 
-
   return (
     <div className='headerContainer'>
       <header className="header">
         <div className="header-icon">
           <img src={Logo} alt="Logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
-
         </div>
         <div className="header-user-info">
-          <div id='logoutContainer'>
-            <button id="logoutButton" onClick={handleLogout}>Cadastre-se!</button>
+          <div id='linkContainer'>
+          <span className="header-link" onClick={() => navigate('/')}>Home</span>
+            <span className="header-link" onClick={() => navigate('/cadastro')}>Cadastre-se</span>
           </div>
         </div>
       </header>

@@ -10,7 +10,6 @@ form {
   border: 1px solid $border-color;
   background-color: #f7f7f7;
   border-radius: 5px;
-  zoom: 150%;
 
   label {
     display: block;
@@ -27,29 +26,19 @@ form {
     border-radius: 4px;
   }
 
-  #loginButton {
-    background-color: $button-bg;
-    color: #000;
-    border: #000;
-    padding: 10%;
-    font-size: 90%;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-right: 3%;
-    margin-left: 3%;
-
-    &:hover {
-      background-color: $button-bg-hover;
-
-    }
-
-    &:not(:hover) {
-      transition: background-color 0.3s ease;
-    }
+  textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 400px;
   }
 
+  #loginButton,
   #cadastroButton {
     background-color: $button-bg;
     color: #000;
@@ -61,10 +50,10 @@ form {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     margin-right: 3%;
+    margin-left: 3%;
 
     &:hover {
       background-color: $button-bg-hover;
-
     }
 
     &:not(:hover) {
@@ -73,15 +62,9 @@ form {
   }
 }
 
-
 h1 {
   text-align: center;
   padding-top: 10px;
-}
-
-h2 {
-  font-size: 12px;
-  padding-top: 2%;
 }
 
 a {

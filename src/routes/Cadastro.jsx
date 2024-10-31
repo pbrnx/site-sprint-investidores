@@ -11,9 +11,9 @@ function Cadastro() {
   document.title = "hAppVida Fitness | Cadastre-se";
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-
   const [celular, setCelular] = useState('');
   const [nomeEmpresa, setnomeEmpresa] = useState('');
+  const [mensagem, setMensagem] = useState('');
   const [checkboxChecked, setCheckboxChecked] = useState(false);
 
   const history = useNavigate();
@@ -30,13 +30,16 @@ function Cadastro() {
     setEmail(event.target.value);
   };
 
-
   const handleCelularChange = (event) => {
     let value = event.target.value;
     value = value.replace(/\D/g, ""); // Remove tudo que não for número
     value = value.replace(/(\d{2})(\d)/, "($1) $2"); // Coloca os parênteses no DDD
     value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Coloca o traço
     setCelular(value);
+  };
+
+  const handleMensagemChange = (event) => {
+    setMensagem(event.target.value);
   };
 
   const handleCheckboxChange = (event) => {
@@ -61,8 +64,6 @@ function Cadastro() {
       return;
     }
 
-
-
     if (!celularRegex.test(celular)) {
       toast.error("Celular inválido! Use o formato (XX) XXXXX-XXXX.");
       return;
@@ -79,6 +80,7 @@ function Cadastro() {
       email,
       celular,
       nomeEmpresa,
+      mensagem,
     };
 
     try {
@@ -116,13 +118,16 @@ function Cadastro() {
         <input type="text" id="email" placeholder='Digite seu Email' value={email} onChange={handleEmailChange} />
         <br />
 
-
         <label htmlFor="celular">Celular:</label>
         <input type="text" id="celular" placeholder='Digite seu celular ((XX) XXXXX-XXXX)' value={celular} onChange={handleCelularChange} />
         <br />
 
         <label htmlFor="empresa">Nome da Empresa:</label>
         <input type="text" id="empresa" placeholder='Digite o nome da sua empresa' value={nomeEmpresa} onChange={handlenomeEmpresaChange} />
+        <br />
+
+        <label htmlFor="mensagem">Mensagem:</label>
+        <textarea id="mensagem" placeholder='Deixe uma mensagem (até 400 caracteres)' value={mensagem} onChange={handleMensagemChange} maxLength="400" style={{ width: '100%', maxWidth: '400px', height: '100px', maxHeight: '400px' }} />
         <br />
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />

@@ -17,7 +17,7 @@ export default function Home() {
             <div className='solution-title-container'>
               <h1 className="solution-title">LaparoscopySim</h1>
 
-              <p>Domine as técnicas de laparoscopia, desenvolva precisão e confiança com um treinamento personalizado. Somos o futuro da saúde e da segurança dos seus pacientes — e ele começa aqui.</p>
+              <p>Domine as técnicas de laparoscopia, sua precisão e confiança. Somos o futuro da saúde e da segurança dos seus pacientes — e ele começa aqui.</p>
             </div>
 
             {/* Título 

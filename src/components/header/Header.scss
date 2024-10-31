@@ -38,22 +38,22 @@ $button-bg-hover: #b4d2ff;  // Cor mais clara para o efeito de hover no botão
                 font-weight: 300; // Fonte mais fina para um visual delicado
             }
 
-            #logoutContainer {
-                padding-right: 20px; // Ajustado para centralizar o botão
+            #linkContainer {
+                padding-right: 20px; // Ajustado para centralizar os links
                 padding-left: 0;
                 padding-bottom: 0;
+                display: flex;
+                gap: 15px; // Espaço entre os links
 
-                #logoutButton {
-                    background-color: $button-bg;
-                    color: #ffffff; // Alterado para branco para contraste melhor
-                    border: none;
-                    padding: 10px 20px; // Aumentei o padding para mais espaçamento no botão
+                .header-link {
+                    color: #0099ff; // Cor do link
+                    text-decoration: none;
+                    font-weight: bold;
                     cursor: pointer;
-                    border-radius: 4px;
-                    transition: 0.3s;
+                    transition: color 0.3s;
 
                     &:hover {
-                        background-color: $button-bg-hover;
+                        color: #b4d2ff; // Cor do link no hover
                     }
                 }
             }

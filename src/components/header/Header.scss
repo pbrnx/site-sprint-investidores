@@ -20,7 +20,7 @@ $button-bg-hover: #b4d2ff;  // Cor mais clara para o efeito de hover no botão
 
         .header-icon {
             img {
-                width: 250px; // Reduzi o tamanho para balancear visualmente com o botão
+                width: 200px; // Reduzi o tamanho para balancear visualmente com o botão
             }
         }
 
@@ -59,4 +59,10 @@ $button-bg-hover: #b4d2ff;  // Cor mais clara para o efeito de hover no botão
             }
         }
     }
+    @media (max-width:768px){
+            img {
+                width: 200px; // Reduzi o tamanho para balancear visualmente com o botão
+            }
+    }
 }
+

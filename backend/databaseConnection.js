@@ -19,9 +19,9 @@ const dbConfig = {
 
 // Rota para criar um novo usuário
 app.post('/users', async (req, res) => {
-  const { nome, email, cpf, celular, nomeEmpresa } = req.body;
+  const { nome, email, celular, nomeEmpresa } = req.body;
 
-  if (!nome || !email || !cpf || !celular || !nomeEmpresa) {
+  if (!nome || !email || !celular || !nomeEmpresa) {
     return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
   }
 
@@ -31,13 +31,13 @@ app.post('/users', async (req, res) => {
     connection = await oracledb.getConnection(dbConfig);
 
     const query = `
-      INSERT INTO USERS (NOME, EMAIL, CPF, CELULAR, NOME_EMPRESA)
-      VALUES (:nome, :email, :cpf, :celular, :nomeEmpresa)
+      INSERT INTO USERS (NOME, EMAIL, CELULAR, NOME_EMPRESA)
+      VALUES (:nome, :email, :celular, :nomeEmpresa)
     `;
 
     const result = await connection.execute(
       query,
-      { nome, email, cpf, celular, nomeEmpresa },
+      { nome, email, celular, nomeEmpresa },
       { autoCommit: true }
     );
 

@@ -8,7 +8,7 @@ import '../scss/Form.scss';
 const VITE_REACT_APP_NGROK_URL = 'https://legible-chipmunk-only.ngrok-free.app';
 
 function Cadastro() {
-  document.title = "hAppVida Fitness | Cadastre-se";
+  document.title = "Laparoscopy Sim | Cadastre-se";
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [celular, setCelular] = useState('');
@@ -110,28 +110,28 @@ function Cadastro() {
     <>
       <h1>Cadastre-se e faça parte do nosso projeto!</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="nomeCompleto">Nome Completo:</label>
+        <label htmlFor="nomeCompleto">*Nome Completo: </label>
         <input type="text" id="nomeCompleto" placeholder='Digite seu nome completo' value={nome} onChange={handleNomeChange} />
         <br />
 
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">*Email: </label>
         <input type="text" id="email" placeholder='Digite seu Email' value={email} onChange={handleEmailChange} />
         <br />
 
-        <label htmlFor="celular">Celular:</label>
+        <label htmlFor="celular">*Celular: </label>
         <input type="text" id="celular" placeholder='Digite seu celular ((XX) XXXXX-XXXX)' value={celular} onChange={handleCelularChange} />
         <br />
 
-        <label htmlFor="empresa">Nome da Empresa:</label>
+        <label htmlFor="empresa">*Nome da Empresa: </label>
         <input type="text" id="empresa" placeholder='Digite o nome da sua empresa' value={nomeEmpresa} onChange={handlenomeEmpresaChange} />
         <br />
 
-        <label htmlFor="mensagem">Mensagem:</label>
+        <label htmlFor="mensagem">Mensagem: </label>
         <textarea id="mensagem" placeholder='Deixe uma mensagem (até 400 caracteres)' value={mensagem} onChange={handleMensagemChange} maxLength="400" style={{ width: '100%', maxWidth: '400px', height: '100px', maxHeight: '400px' }} />
         <br />
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />
-        <label htmlFor="checkbox">Aceito os termos e condições e concordo com o uso dos meus dados de acordo com a LGPD (Lei Geral de Proteção de Dados).</label>
+        <label htmlFor="checkbox">Aceito os termos e condições e concordo com o uso dos meus dados de acordo com a LGPD (Lei Geral de Proteção de Dados). *</label>
         <br />
 
         <button type="submit" id="cadastroButton">Cadastrar</button>

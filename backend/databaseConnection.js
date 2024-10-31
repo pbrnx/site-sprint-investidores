@@ -21,7 +21,7 @@ const dbConfig = {
 app.post('/users', async (req, res) => {
   const { nome, email, celular, nomeEmpresa, mensagem } = req.body;
 
-  if (!nome || !email || !celular || !nomeEmpresa || !mensagem) {
+  if (!nome || !email || !celular || !nomeEmpresa) {
     return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
   }
 

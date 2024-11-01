@@ -2,13 +2,20 @@
 
 import express from 'express';
 import oracledb from 'oracledb';
-import cors from 'cors'; // Importar o CORS para permitir requisições do frontend
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
+console.log("NGROK_URL:", process.env.NGROK_URL);
+
+
+
 
 const app = express();
 const port = 25565;
 
 app.use(express.json());
-app.use(cors()); // Habilitar CORS para permitir comunicação com o frontend
+app.use(cors());
 
 // Configurações para conectar ao Oracle Database
 const dbConfig = {
@@ -16,6 +23,13 @@ const dbConfig = {
   password: '270904',
   connectString: 'oracle.fiap.com.br:1521/ORCL'
 };
+
+// Rota para obter a URL do backend
+app.get('/api/backend-url', (req, res) => {
+  console.log("NGROK_URL:", process.env.NGROK_URL); // Adicione esta linha para verificar o valor
+  res.json({ url: process.env.NGROK_URL });
+});
+
 
 // Rota para criar um novo usuário
 app.post('/users', async (req, res) => {
@@ -44,14 +58,12 @@ app.post('/users', async (req, res) => {
     res.status(201).json({ message: 'Usuário cadastrado com sucesso!', result });
 
   } catch (err) {
-  console.error(err);
-  if (err.errorNum === 1) { // Verifica erro de constraint de unicidade (ex.: email já existente)
-    res.status(409).json({ message: 'Esse usuário já foi adicionado.' });
-  } else {
-    res.status(500).json({ message: 'Erro ao cadastrar o usuário.' });
-  }
-
-
+    console.error(err);
+    if (err.errorNum === 1) {
+      res.status(409).json({ message: 'Esse usuário já foi adicionado.' });
+    } else {
+      res.status(500).json({ message: 'Erro ao cadastrar o usuário.' });
+    }
   } finally {
     if (connection) {
       try {
@@ -66,14 +78,14 @@ app.post('/users', async (req, res) => {
 // Rota para obter todos os usuários
 app.get('/users', async (req, res) => {
   let connection;
-  
+
   try {
     connection = await oracledb.getConnection(dbConfig);
-    
+
     const query = `
       SELECT * FROM USERS
     `;
-    
+
     const result = await connection.execute(query);
     res.status(200).json(result.rows);
   } catch (err) {
@@ -90,6 +102,6 @@ app.get('/users', async (req, res) => {
   }
 });
 
-app.listen(port, '0.0.0.0',() => {
-  console.log('Servidor rodando em http://179.116.2.197:25565');
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });

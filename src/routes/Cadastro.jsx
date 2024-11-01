@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Footer from '../components/footer/Footer.jsx';
 import '../scss/Form.scss';
 
-// URL fornecida manualmente, pois process.env não está funcionando corretamente
-const VITE_REACT_APP_NGROK_URL = 'https://legible-chipmunk-only.ngrok-free.app';
-
 function Cadastro() {
   document.title = "Laparoscopy Sim | Cadastre-se";
   const [nome, setNome] = useState('');
@@ -18,40 +15,23 @@ function Cadastro() {
 
   const history = useNavigate();
 
-  const handleNomeChange = (event) => {
-    setNome(event.target.value);
-  };
-
-  const handlenomeEmpresaChange = (event) => {
-    setnomeEmpresa(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
+  const handleNomeChange = (event) => setNome(event.target.value);
+  const handlenomeEmpresaChange = (event) => setnomeEmpresa(event.target.value);
+  const handleEmailChange = (event) => setEmail(event.target.value);
   const handleCelularChange = (event) => {
     let value = event.target.value;
-    value = value.replace(/\D/g, ""); // Remove tudo que não for número
-    value = value.replace(/(\d{2})(\d)/, "($1) $2"); // Coloca os parênteses no DDD
-    value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Coloca o traço
+    value = value.replace(/\D/g, "");
+    value = value.replace(/(\d{2})(\d)/, "($1) $2");
+    value = value.replace(/(\d{5})(\d)/, "$1-$2");
     setCelular(value);
   };
-
-  const handleMensagemChange = (event) => {
-    setMensagem(event.target.value);
-  };
-
-  const handleCheckboxChange = (event) => {
-    setCheckboxChecked(event.target.checked);
-  };
+  const handleMensagemChange = (event) => setMensagem(event.target.value);
+  const handleCheckboxChange = (event) => setCheckboxChecked(event.target.checked);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Verificação dos campos
     const checkMail = email.trim();
-
     const celularRegex = /^\(\d{2}\)\s\d{5}-\d{4}$/;
 
     if (nome.length === 0) {
@@ -74,17 +54,14 @@ function Cadastro() {
       return;
     }
 
-    // Se todos os campos forem válidos, prossegue com o cadastro
-    const newUser = {
-      nome,
-      email,
-      celular,
-      nomeEmpresa,
-      mensagem,
-    };
+    const newUser = { nome, email, celular, nomeEmpresa, mensagem };
 
     try {
-      const response = await fetch(`${VITE_REACT_APP_NGROK_URL}/users`, {
+      // Obter a URL do backend dinamicamente
+      const urlResponse = await fetch('/api/backend-url');
+      const { url } = await urlResponse.json();
+
+      const response = await fetch(`${url}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,10 +69,9 @@ function Cadastro() {
         body: JSON.stringify(newUser),
       });
 
-      const result = await response.json(); // Tenta obter o corpo da resposta do servidor.
+      const result = await response.json();
 
       if (!response.ok) {
-        // Se houver um erro, use a mensagem do servidor, se disponível.
         throw new Error(result.message || 'Erro ao cadastrar. Tente novamente.');
       }
 

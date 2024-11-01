@@ -97,7 +97,7 @@ function Cadastro() {
         <br />
 
         <label htmlFor="celular">*Celular: </label>
-        <input type="text" id="celular" placeholder='Digite seu celular ((XX) XXXXX-XXXX)' value={celular} onChange={handleCelularChange} />
+        <input type="text" id="celular" placeholder='Digite seu celular' value={celular} maxLength="15" onChange={handleCelularChange} />
         <br />
 
         <label htmlFor="empresa">*Nome da Empresa: </label>

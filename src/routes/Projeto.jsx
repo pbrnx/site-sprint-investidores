@@ -4,10 +4,6 @@ import "../scss/Projeto.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-// Instalação do Bootstrap via npm
-// Para instalar o Bootstrap no seu projeto via npm, execute o comando abaixo no terminal:
-// npm install bootstrap
-
 export default function Home() {
   document.title = "LaparoscopySim | Home";
   const [hoveredImage, setHoveredImage] = useHoverState(null);
@@ -50,16 +46,23 @@ export default function Home() {
             </div>
           </aside>
         </section>
+        
         <section className="solution-container">
           <aside className="additional-info">
-            <p>Aprender laparoscopia vai muito além de simplesmente adquirir uma habilidade; é uma necessidade essencial para os profissionais de saúde que desejam liderar em suas áreas de atuação. Nesse contexto, o Laparoscopy Sim emerge como uma ferramenta fundamental para os futuros cirurgiões, oferecendo uma abordagem inovadora e eficaz para o treinamento de técnicas laparoscópicas. Com os desafios únicos que envolvem procedimentos minimamente invasivos, a prática constante e adaptativa é crucial para desenvolver as habilidades motoras e cognitivas necessárias. O Laparoscopy Sim oferece um ambiente seguro e personalizado onde os médicos podem praticar, cometendo erros e aprendendo com eles sem riscos reais para os pacientes. O foco em orientação detalhada, feedback imediato e um desenvolvimento progressivo torna essa experiência de aprendizagem indispensável para uma preparação confiante e de alto nível.</p><br />
+            <p>A LEPIC (Laboratório de Ensino e Pesquisa em Inovação Cirúrgica) é uma instituição dedicada ao avanço das práticas cirúrgicas e à formação de profissionais que prezam pela excelência e inovação. Com valores pautados na responsabilidade, no desenvolvimento técnico-científico e no compromisso com a segurança do paciente, a LEPIC acredita na importância de capacitar cirurgiões com as melhores tecnologias e métodos de ensino.</p>
+            <br />
 
-            <p>Além do aperfeiçoamento técnico, o Laparoscopy Sim ajuda a fomentar a precisão e a coordenação necessárias para cada etapa de uma cirurgia laparoscópica. O treinamento através de simulações realistas permite aos alunos não apenas desenvolver competências operacionais, mas também criar uma abordagem holística à cirurgia, incorporando aspectos como ergonomia, eficiência de movimento e solução de problemas em tempo real. Ao combinar análises detalhadas de progresso e planos personalizados de aprendizado, o Laparoscopy Sim capacita futuros médicos a alcançarem uma alta proficiência em um ambiente de aprendizado acessível e motivador. Assim, ele não é apenas uma plataforma de treinamento, mas sim um verdadeiro aliado na formação de cirurgiões que estarão prontos para fazer a diferença na vida dos pacientes e na evolução da medicina minimamente invasiva. </p>
+            <p>Nesse contexto, o LaparoscopySim surge como uma solução alinhada aos princípios da LEPIC. A plataforma utiliza óculos VR para proporcionar uma experiência imersiva e segura, permitindo que os alunos pratiquem técnicas cirúrgicas de alta precisão em um ambiente controlado. Além disso, o LaparoscopySim se destaca pelo uso da Unreal Engine 5 (UE5), que proporciona qualidade gráfica superior, recriando com realismo os cenários de uma sala de cirurgia e oferecendo um nível de detalhamento essencial para o treinamento avançado.</p>
+            <br />
+
+            <p>O realismo da UE5 tem um efeito psicológico profundo na construção da confiança dos alunos. A imersão total no cenário virtual facilita a criação de uma representação mental realista do ambiente cirúrgico, o que reforça a segurança dos estudantes ao praticarem procedimentos em um contexto que simula fielmente uma situação de vida real. Essa ambientação virtual ajuda a reduzir a ansiedade e o medo de cometer erros, permitindo que o aluno se concentre em desenvolver precisão e eficiência.</p>
+            <br />
+
+            <p>Assim, o LaparoscopySim está em sintonia com a missão da LEPIC de transformar o ensino cirúrgico. Combinando tecnologia de ponta e um ambiente educacional que incentiva o aprendizado contínuo, a plataforma promove o desenvolvimento das habilidades motoras e cognitivas dos futuros cirurgiões. Esse alinhamento de propósitos faz do LaparoscopySim uma ferramenta poderosa e um verdadeiro parceiro para profissionais que buscam não apenas aprimorar suas técnicas, mas também atuar com segurança e excelência em cada procedimento.</p>
           </aside>
         </section>
       </main>
       
-      {/* Seção "Por que utilizar?" adaptada */}
       <div className='vantagens'>
         <h1>Por que utilizar o LaparoscopySim?</h1>
         <p><b>Desenvolva sua habilidade cirúrgica</b> com práticas de laparoscopia de alto nível em um ambiente seguro e controlado. Com a nossa plataforma, você poderá:
@@ -67,7 +70,8 @@ export default function Home() {
             <li>Praticar técnicas minimamente invasivas sem riscos reais para os pacientes;</li>
             <li>Aprimorar sua precisão e coordenação motora em cada etapa da cirurgia;</li>
             <li>Receber feedback imediato para uma evolução contínua;</li>
-            <li>Desenvolver uma abordagem holística, integrando ergonomia e eficiência de movimento.</li>
+            <li>Desenvolver uma abordagem holística, integrando ergonomia e eficiência de movimento;</li>
+            <li>Ganhar confiança com um ambiente realista que prepara a mente para situações reais.</li>
           </ul>
           O LaparoscopySim é uma ferramenta indispensável para o aprendizado e domínio da laparoscopia, preparando você para enfrentar os desafios do futuro da medicina com confiança e habilidade.
           <br /><br /><b>Clique nas imagens para interagir!</b>
@@ -92,7 +96,6 @@ export default function Home() {
             onMouseLeave={() => setHoveredImage(null)}
           />
         </div>
-
       </div>
     </>
   );

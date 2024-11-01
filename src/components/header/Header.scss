@@ -9,8 +9,10 @@
   background-color: #c6e3ff;
   padding: 10px 20px;
   position: relative;
-  z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
+  z-index: 10;
 }
+
+
 
 .header-icon img {
   height: 100px;
@@ -25,6 +27,15 @@
   cursor: pointer;
   font-weight: bold;
   color: #007bff;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #a1bdd9; /* Adiciona uma cor mais escura ao hover */
+  }
+
+  &focus {outline:none;
+  
+  }
 }
 
 .hamburger {
@@ -46,7 +57,7 @@
   .header-user-info {
     display: none;
     position: absolute;
-    top: 60px; /* Empurra o menu para baixo, abaixo do header */
+    top: 60px;
     right: 20px;
     flex-direction: column;
     gap: 10px;
@@ -54,7 +65,7 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Mantém o menu acima do carrossel */
+    z-index: 10;
   }
 
   .header-user-info.open {

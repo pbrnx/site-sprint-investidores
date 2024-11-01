@@ -8,7 +8,7 @@ export default function Header({ children }) {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function handleLogout() {
+  function handleRedirect() {
     navigate('/cadastro');
     toast("Essa é a página de cadastro! \n Insira suas informações abaixo.");
   }
@@ -25,7 +25,7 @@ export default function Header({ children }) {
         </div>
         <div className={`header-user-info ${isMenuOpen ? 'open' : ''}`} id='linkContainer'>
           <span className="header-link" onClick={() => navigate('/')}>Home</span>
-          <span className="header-link" onClick={() => navigate('/cadastro')}>Cadastre-se</span>
+          <span className="header-link" onClick={() => handleRedirect()}>Cadastre-se</span>
           <span className="header-link" onClick={() => navigate('/galeria')}>Galeria</span>
         </div>
         <div className="hamburger" onClick={toggleMenu}>

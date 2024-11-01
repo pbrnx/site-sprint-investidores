@@ -110,11 +110,37 @@ $secondary-color: #eaeaea;
     }
 }
 
-@media (max-width:768px){
-  .main-content{
+@media (max-width: 768px) {
+  .main-content {
     flex-direction: column;
-    .carousel{
-        width: 200%;
+    align-items: center;
+
+    .carousel-container {
+      max-width: 100%; // Expande o carrossel para toda a largura
+    }
+
+    .solution-title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Centraliza o conteúdo
+      padding: 10px; // Ajusta o padding para se adequar ao layout mobile
+
+      h1.solution-title {
+        text-align: center; // Centraliza o título
+        font-size: 200%; // Ajusta o tamanho do título, se necessário
+      }
+
+      p {
+        width: 100%; // Expande o parágrafo para ocupar toda a largura
+        text-align: center; // Centraliza o texto
+        padding: 0; // Remove o padding lateral
+        margin-top: 10px; // Adiciona um espaçamento entre o título e o parágrafo
+      }
+    }
+
+    .solution-container {
+      padding: 5%; // Ajusta o padding para tornar o layout mais compacto em mobile
     }
   }
 }
+

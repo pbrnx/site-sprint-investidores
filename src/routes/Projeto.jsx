@@ -17,21 +17,21 @@ export default function Home() {
       <main className="main-content">
         <section className="carousel-container">
           <aside className="carousel">
-            <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div id="carouselExampleIndicators" className="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="3000">
               <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
-              <div className="carousel-inner">
+              <div className="carousel-inner w-100">
                 <div className="carousel-item active" aria-current="true">
-                  <img src="/assets/imgtexto.png" className="d-block w-100" alt="Solução inteligente" />
+                  <img src="/assets/imgtexto.png" className="d-block img-fluid w-100" alt="Solução inteligente" />
                 </div>
                 <div className="carousel-item">
-                  <img src="/assets/imgtexto2.png" className="d-block w-100" alt="Segunda solução" />
+                  <img src="/assets/imgtexto2.png" className="d-block img-fluid w-100" alt="Segunda solução" />
                 </div>
                 <div className="carousel-item">
-                  <img src="/assets/imgtexto3.png" className="d-block w-100" alt="Terceira solução" />
+                  <img src="/assets/imgtexto3.png" className="d-block img-fluid w-100" alt="Terceira solução" />
                 </div>
               </div>
               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

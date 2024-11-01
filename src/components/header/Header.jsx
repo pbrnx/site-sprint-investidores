@@ -24,6 +24,7 @@ export default function Header({ children }) {
           <div id='linkContainer'>
           <span className="header-link" onClick={() => navigate('/')}>Home</span>
             <span className="header-link" onClick={() => navigate('/cadastro')}>Cadastre-se</span>
+            <span className="header-link" onClick={() => navigate('/galeria')}>Galeria</span>
           </div>
         </div>
       </header>

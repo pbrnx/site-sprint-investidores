@@ -16,6 +16,9 @@ function Cadastro() {
 
   const history = useNavigate();
 
+  // Defina a URL do backend diretamente aqui
+  const backendUrl = "https://legible-chipmunk-only.ngrok-free.app"; // Substitua pela URL pública do backend
+
   const handleNomeChange = (event) => setNome(event.target.value);
   const handlenomeEmpresaChange = (event) => setnomeEmpresa(event.target.value);
   const handleEmailChange = (event) => setEmail(event.target.value);
@@ -59,11 +62,7 @@ function Cadastro() {
     const newUser = { nome, email, celular, nomeEmpresa, mensagem, avaliacao };
 
     try {
-      // Obter a URL do backend dinamicamente
-      const urlResponse = await fetch('/api/backend-url');
-      const { url } = await urlResponse.json();
-
-      const response = await fetch(`${url}/users`, {
+      const response = await fetch(`${backendUrl}/users`, { // Usando a URL direta
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

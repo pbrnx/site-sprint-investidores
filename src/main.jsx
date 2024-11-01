@@ -4,6 +4,8 @@ import './index.css';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 
+
+
 import Cadastro from './routes/Cadastro.jsx';
 import Projeto from './routes/Projeto.jsx';
 import Galeria from './routes/Galeria.jsx';

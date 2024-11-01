@@ -1,68 +1,67 @@
-$button-bg: #0099ff;  // Cor azul vibrante para o botão de ação
-$button-bg-hover: #b4d2ff;  // Cor mais clara para o efeito de hover no botão
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .headerContainer {
-    width: 100%;
-
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #c3d4f2; // Azul ligeiramente mais escuro para mais contraste
-        padding: 20px; // Maior padding para mais espaço ao redor do conteúdo
-        width: 100%;
-
-        .header-icon {
-            img {
-                width: 200px; // Reduzi o tamanho para balancear visualmente com o botão
-            }
-        }
-
-        .header-user-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            span {
-                margin-right: 10px;
-                display: flex;
-                flex-direction: column;
-                text-align: center; // Centralizado para ficar mais simétrico
-                font-weight: 300; // Fonte mais fina para um visual delicado
-            }
-
-            #linkContainer {
-                padding-right: 20px; // Ajustado para centralizar os links
-                padding-left: 0;
-                padding-bottom: 0;
-                display: flex;
-                gap: 15px; // Espaço entre os links
-
-                .header-link {
-                    color: #0099ff; // Cor do link
-                    text-decoration: none;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: color 0.3s;
-
-                    &:hover {
-                        color: #b4d2ff; // Cor do link no hover
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width:768px){
-            img {
-                width: 200px; // Reduzi o tamanho para balancear visualmente com o botão
-            }
-    }
+  width: 100%;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c6e3ff;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10; /* Para garantir que o menu fique acima de outros elementos */
+}
+
+.header-icon img {
+  height: 100px;
+}
+
+.header-user-info {
+  display: flex;
+  gap: 20px;
+}
+
+.header-link {
+  cursor: pointer;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-user-info {
+    display: none;
+    position: absolute;
+    top: 60px; /* Empurra o menu para baixo, abaixo do header */
+    right: 20px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f4f8;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Mantém o menu acima do carrossel */
+  }
+
+  .header-user-info.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

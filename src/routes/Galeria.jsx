@@ -4,12 +4,12 @@ import '../scss/Galeria.css';
 
 // Exemplo de dados para a galeria
 const images = [
-  { id: 1, src: '../public/assets/link_para_imagem1.jpg', title: 'Título 1' },
-  { id: 2, src: '../public/assets/link_para_imagem2.jpg', title: 'Título 2' },
-  { id: 3, src: '../public/assets/link_para_imagem3.jpg', title: 'Título 3' },
-   { id: 4, src: '../public/assets/link_para_imagem1.jpg', title: 'Título 3' },
-    { id: 5, src: '../public/assets/link_para_imagem2.jpg', title: 'Título 3' },
-     { id: 6, src: '../public/assets/link_para_imagem3.jpg', title: 'Título 3' },
+  { id: 1, src: '/assets/link_para_imagem1.jpg', title: 'Título 1' },
+  { id: 2, src: '/assets/link_para_imagem2.jpg', title: 'Título 2' },
+  { id: 3, src: '/assets/link_para_imagem3.jpg', title: 'Título 3' },
+   { id: 4, src: '/assets/link_para_imagem1.jpg', title: 'Título 3' },
+    { id: 5, src: '/assets/link_para_imagem2.jpg', title: 'Título 3' },
+     { id: 6, src: '/assets/link_para_imagem3.jpg', title: 'Título 3' },
   // Adicione mais imagens conforme necessário
 ];
 

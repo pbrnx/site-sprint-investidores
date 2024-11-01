@@ -6,10 +6,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
-console.log("NGROK_URL:", process.env.NGROK_URL);
+console.log("VITE_GROK_URL:", process.env.VITE_NGROK_URL);
 
 
-if (!process.env.NGROK_URL) {
+if (!process.env.VITE_NGROK_URL) {
   console.error("Erro: NGROK_URL não está definida. Verifique o arquivo .env e reinicie o servidor.");
   process.exit(1); // Termina o processo se NGROK_URL não estiver definida
 }
@@ -30,8 +30,8 @@ const dbConfig = {
 
 // Rota para obter a URL do backend
 app.get('/api/backend-url', (req, res) => {
-  console.log("NGROK_URL:", process.env.NGROK_URL); // Adicione esta linha para verificar o valor
-  res.json({ url: process.env.NGROK_URL });
+  console.log("VITE_NGROK_URL:", process.env.VITE_NGROK_URL); // Adicione esta linha para verificar o valor
+  res.json({ url: process.env.VITE_NGROK_URL });
 });
 
 

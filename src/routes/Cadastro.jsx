@@ -131,12 +131,11 @@ function Cadastro() {
         <br />
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />
-        <label htmlFor="checkbox">Aceito os termos e condições e concordo com o uso dos meus dados de acordo com a LGPD (Lei Geral de Proteção de Dados). *</label>
+        <label htmlFor="checkbox">*Concordo com o uso dos meus dados de acordo com a <a href='https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm' target='_blank'>LGPD (Lei Geral de Proteção de Dados)</a></label>
         <br />
 
         <button type="submit" id="cadastroButton">Cadastrar</button>
       </form>
-      <Footer />
     </>
   );
 }

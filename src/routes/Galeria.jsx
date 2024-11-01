@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../scss/Galeria.css';
 
+
 // Exemplo de dados para a galeria
 const images = [
   { id: 1, src: '/assets/link_para_imagem1.jpg', title: 'Título 1' },
@@ -51,5 +52,6 @@ export default function Galeria() {
         ))}
       </div>
     </div>
+    
   );
 }

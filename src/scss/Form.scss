@@ -14,7 +14,7 @@ zoom:125%;
   label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 300;
+    font-weight: 500;
   }
 
   input[type="text"],
@@ -67,7 +67,7 @@ h1 {
   padding-top: 10px;
 }
 
-a {
+label a{
   text-decoration: none;
 }
 
@@ -76,4 +76,5 @@ a {
   flex-direction: row;
   max-width: 18%;
   text-align: center;
+
 }

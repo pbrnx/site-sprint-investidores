@@ -1,114 +1,104 @@
 $font-color: #333;
-$secondary-color: #eaeaea; 
+$secondary-color: #eaeaea;
 
 .main-content {
-    color: $font-color;
+  color: $font-color;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between; 
+
+  .carousel-container {
+    flex: 1; 
+    max-width: 50%;
+
+    img {
+      width: 100%; 
+      height: auto;
+      padding: 5%;
+    }
+  }
+
+  .solution-container {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 2.5%;
+  }
+
+  .solution-article {
     display: flex;
-    align-items: flex-start; 
-    justify-content: space-between; 
-  
-    .carousel-container {
-      flex: 1; 
-      max-width: 50%;
-  
-      img {
-        width: 100%; 
-        height: auto;
-       padding: 5%;
-      }
-    }
-  
-    .solution-container {
-      flex: 1; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      padding: 2.5%
-    }
-  
-    .solution-article {
-
-        display: flex;
-        flex-direction: column;
-        text-align: left; // Alinha o texto à esquerda
-        padding-left: 10%;
-       
-   
-    }
-
-    .solution-title-container{
-       
-        padding: 20px;
-        margin: 0;
-        display: flex;
-        p{
-            padding-left: 12%;
-            width: 50%;
-        }
-   
-    .solution-title { // Estilos para o título
-        text-align: center;
-         // Espaço acima do título
-        font-size: 240%;
-
-        // Tamanho do texto, ajuste conforme necessário
-      }
-    }
-
-  
-    .additional-info {
-      background-color: $secondary-color;
-      padding: 2%; 
-      font-size: 120%;
-      text-align: justify;
-    }
-  }
-
-  .vantagens{
+    flex-direction: column;
     text-align: left;
-    padding-left:2%;
-    h1{
-      text-align: left;
+    padding-left: 10%;
+  }
+
+  .solution-title-container {
+    padding: 20px;
+    margin: 0;
+    display: flex;
+
+    p {
+      padding-left: 12%;
+      width: 50%;
     }
-    
-   p{
-      font-size: 120%;
+
+    .solution-title {
+      text-align: center;
+      font-size: 240%;
     }
   }
+
+  .additional-info {
+    background-color: $secondary-color;
+    padding: 2%; 
+    font-size: 120%;
+    text-align: justify;
+  }
+}
+
+.vantagens {
+  text-align: left;
+  padding-left: 2%;
+
+  h1 {
+    text-align: left;
+  }
+  
+  p {
+    font-size: 120%;
+  }
+}
 
 .photos-section {
   display: flex; 
   justify-content: center; 
   margin-top: 20px; 
-  padding-bottom:5%;
- 
-    .img-container {
-      min-width: 10%; 
-      overflow: hidden;
-      margin-left: 5%;
-      margin-right: 5%;
-      height: auto;
-      border-radius: 15px;
-      
-    }
-    
-    img.imgP1 {
-      width: 100%;
-      
-      filter: grayscale(90%);
-    }
+  padding-bottom: 5%;
 
-    .img-container:hover img.imgP1 {
-      transform: scale(1.2); 
-      transition:  0.5s ease;
-    
-      filter: grayscale(0);
-    }
+  .img-container {
+    min-width: 10%; 
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  img.imgP1 {
+    width: 100%;
+    filter: grayscale(90%);
+  }
 
-    .img-container:not(:hover) img.imgP1 {
-      transition:  1s ease;
-     
-    }
+  .img-container:hover img.imgP1 {
+    transform: scale(1.2); 
+    transition: 0.5s ease;
+    filter: grayscale(0);
+  }
+
+  .img-container:not(:hover) img.imgP1 {
+    transition: 1s ease;
+  }
 }
 
 @media (max-width: 768px) {
@@ -117,31 +107,41 @@ $secondary-color: #eaeaea;
     align-items: center;
 
     .carousel-container {
-      max-width: 100%; // Expande o carrossel para toda a largura
+      max-width: 100%;
     }
 
     .solution-title-container {
       display: flex;
       flex-direction: column;
-      align-items: center; // Centraliza o conteúdo
-      padding: 10px; // Ajusta o padding para se adequar ao layout mobile
+      align-items: center;
+      padding: 10px;
 
       h1.solution-title {
-        text-align: center; // Centraliza o título
-        font-size: 200%; // Ajusta o tamanho do título, se necessário
+        text-align: center;
+        font-size: 200%;
       }
 
       p {
-        width: 100%; // Expande o parágrafo para ocupar toda a largura
-        text-align: center; // Centraliza o texto
-        padding: 0; // Remove o padding lateral
-        margin-top: 10px; // Adiciona um espaçamento entre o título e o parágrafo
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-top: 10px;
       }
     }
 
     .solution-container {
-      padding: 5%; // Ajusta o padding para tornar o layout mais compacto em mobile
+      padding: 5%;
+    }
+  }
+
+  .photos-section {
+    flex-direction: column;
+    align-items: center;
+
+    .img-container {
+      margin: 10px 0;
+      width: 90%; // Ocupa 90% da largura da tela no mobile
+      max-width: 500px; // Limite maior para manter as imagens grandes em dispositivos grandes
     }
   }
 }
-

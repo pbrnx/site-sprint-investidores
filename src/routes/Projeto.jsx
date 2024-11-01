@@ -58,9 +58,19 @@ export default function Home() {
           </aside>
         </section>
       </main>
+      
+      {/* Seção "Por que utilizar?" adaptada */}
       <div className='vantagens'>
-        <h1>Por que utilizar?</h1>
-        <p><b>Envelheça com saúde</b>, <b>controle seu peso </b>e <b>ajuste sua dieta</b>, tudo em apenas um lugar! Consulte nossos preços e escolha o plano que melhor atenda às suas necessidades.</p>
+        <h1>Por que utilizar o LaparoscopySim?</h1>
+        <p><b>Desenvolva sua habilidade cirúrgica</b> com práticas de laparoscopia de alto nível em um ambiente seguro e controlado. Com a nossa plataforma, você poderá:
+          <ul>
+            <li>Praticar técnicas minimamente invasivas sem riscos reais para os pacientes;</li>
+            <li>Aprimorar sua precisão e coordenação motora em cada etapa da cirurgia;</li>
+            <li>Receber feedback imediato para uma evolução contínua;</li>
+            <li>Desenvolver uma abordagem holística, integrando ergonomia e eficiência de movimento.</li>
+          </ul>
+          O LaparoscopySim é uma ferramenta indispensável para o aprendizado e domínio da laparoscopia, preparando você para enfrentar os desafios do futuro da medicina com confiança e habilidade.
+        </p>
       </div>
 
       <div className='photos-section'>
@@ -81,7 +91,10 @@ export default function Home() {
             onMouseLeave={() => setHoveredImage(null)}
           />
         </div>
+
       </div>
+
+      <Footer />
     </>
   );
 }

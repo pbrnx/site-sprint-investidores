@@ -9,6 +9,10 @@ dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
 console.log("NGROK_URL:", process.env.NGROK_URL);
 
 
+if (!process.env.NGROK_URL) {
+  console.error("Erro: NGROK_URL não está definida. Verifique o arquivo .env e reinicie o servidor.");
+  process.exit(1); // Termina o processo se NGROK_URL não estiver definida
+}
 
 
 const app = express();

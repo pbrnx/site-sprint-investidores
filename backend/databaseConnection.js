@@ -8,12 +8,10 @@ import dotenv from 'dotenv';
 dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
 console.log("VITE_GROK_URL:", process.env.VITE_NGROK_URL);
 
-
 if (!process.env.VITE_NGROK_URL) {
   console.error("Erro: NGROK_URL não está definida. Verifique o arquivo .env e reinicie o servidor.");
   process.exit(1); // Termina o processo se NGROK_URL não estiver definida
 }
-
 
 const app = express();
 const port = 25565;
@@ -34,10 +32,9 @@ app.get('/api/backend-url', (req, res) => {
   res.json({ url: process.env.VITE_NGROK_URL });
 });
 
-
 // Rota para criar um novo usuário
 app.post('/users', async (req, res) => {
-  const { nome, email, celular, nomeEmpresa, mensagem } = req.body;
+  const { nome, email, celular, nomeEmpresa, mensagem, avaliacao } = req.body; // Incluímos "avaliacao"
 
   if (!nome || !email || !celular || !nomeEmpresa) {
     return res.status(400).json({ message: 'Por favor, preencha todos os campos.' });
@@ -49,13 +46,13 @@ app.post('/users', async (req, res) => {
     connection = await oracledb.getConnection(dbConfig);
 
     const query = `
-      INSERT INTO USERS (NOME, EMAIL, CELULAR, NOME_EMPRESA, MENSAGEM)
-      VALUES (:nome, :email, :celular, :nomeEmpresa, :mensagem)
+      INSERT INTO USERS (NOME, EMAIL, CELULAR, NOME_EMPRESA, MENSAGEM, AVALIACAO)
+      VALUES (:nome, :email, :celular, :nomeEmpresa, :mensagem, :avaliacao)
     `;
 
     const result = await connection.execute(
       query,
-      { nome, email, celular, nomeEmpresa, mensagem },
+      { nome, email, celular, nomeEmpresa, mensagem, avaliacao }, // Incluímos "avaliacao"
       { autoCommit: true }
     );
 

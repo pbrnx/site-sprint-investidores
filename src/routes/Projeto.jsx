@@ -70,6 +70,7 @@ export default function Home() {
             <li>Desenvolver uma abordagem holística, integrando ergonomia e eficiência de movimento.</li>
           </ul>
           O LaparoscopySim é uma ferramenta indispensável para o aprendizado e domínio da laparoscopia, preparando você para enfrentar os desafios do futuro da medicina com confiança e habilidade.
+          <br /><br /><b>Clique nas imagens para interagir!</b>
         </p>
       </div>
 
@@ -93,8 +94,6 @@ export default function Home() {
         </div>
 
       </div>
-
-      <Footer />
     </>
   );
 }

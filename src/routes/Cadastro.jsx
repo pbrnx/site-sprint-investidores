@@ -12,6 +12,7 @@ function Cadastro() {
   const [nomeEmpresa, setnomeEmpresa] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [checkboxChecked, setCheckboxChecked] = useState(false);
+  const [avaliacao, setAvaliacao] = useState('1'); // Novo estado para a avaliação
 
   const history = useNavigate();
 
@@ -27,6 +28,7 @@ function Cadastro() {
   };
   const handleMensagemChange = (event) => setMensagem(event.target.value);
   const handleCheckboxChange = (event) => setCheckboxChecked(event.target.checked);
+  const handleAvaliacaoChange = (event) => setAvaliacao(event.target.value); // Novo handle para a avaliação
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -54,7 +56,7 @@ function Cadastro() {
       return;
     }
 
-    const newUser = { nome, email, celular, nomeEmpresa, mensagem };
+    const newUser = { nome, email, celular, nomeEmpresa, mensagem, avaliacao };
 
     try {
       // Obter a URL do backend dinamicamente
@@ -102,13 +104,24 @@ function Cadastro() {
         <input type="text" id="empresa" placeholder='Digite o nome da sua empresa' value={nomeEmpresa} onChange={handlenomeEmpresaChange} />
         <br />
 
+        {/* Combo box de Avaliação */}
+        <label htmlFor="avaliacao">*Avaliação: </label>
+        <select id="avaliacao" value={avaliacao} onChange={handleAvaliacaoChange}>
+          <option value="5">5 - Muito Bom</option>
+          <option value="4">4 - Bom</option>
+          <option value="3">3 - Médio</option>
+          <option value="2">2 - Ruim</option>
+          <option value="1">1 - Muito Ruim</option>
+        </select>
+        <br /><br /> 
+
         <label htmlFor="mensagem">Mensagem: </label>
         <textarea id="mensagem" placeholder='Deixe uma mensagem (até 400 caracteres)' value={mensagem} onChange={handleMensagemChange} maxLength="400" style={{ width: '100%', maxWidth: '400px', height: '100px', maxHeight: '400px' }} />
         <br />
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />
         <label htmlFor="checkbox">*Concordo com o uso dos meus dados de acordo com a <a href='https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm' target='_blank'>LGPD (Lei Geral de Proteção de Dados)</a></label>
-        <br />
+        <br /> 
 
         <button type="submit" id="cadastroButton">Cadastrar</button>
       </form>

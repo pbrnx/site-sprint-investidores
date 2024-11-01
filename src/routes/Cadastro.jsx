@@ -76,7 +76,7 @@ function Cadastro() {
         throw new Error(result.message || 'Erro ao cadastrar. Tente novamente.');
       }
 
-      toast.success('Cadastro realizado com sucesso! Suas informações foram enviadas e entraremos em contato. \nObrigado por fazer parte do Laparoscopy Sim!', { duration: 10000 });
+      toast.success('Cadastro realizado com sucesso! Suas informações foram enviadas e entraremos em contato. \nObrigado por fazer parte do Laparoscopy Sim!', { duration: 3000 });
       history('/');
     } catch (error) {
       toast.error(error.message);
